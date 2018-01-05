@@ -10,13 +10,15 @@ import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.ui.ApplicationFrame;
 import kata6.model.Histogram;
 
-public class HistogramDisplay extends ApplicationFrame {
+public class HistogramDisplay<T> extends ApplicationFrame {
     
-    private final Histogram<String> histo;
+    private final Histogram<T> histo;
+    private final String nameEjeX;
     
-    public HistogramDisplay(Histogram<String> histo){
+    public HistogramDisplay(Histogram<T> histo, String nameEjeX){
         super("HISTOGRAMA");
         this.histo = histo;
+        this.nameEjeX = nameEjeX;
         setContentPane(createPanel());
         pack();
     }
@@ -29,7 +31,7 @@ public class HistogramDisplay extends ApplicationFrame {
     
     private JFreeChart createChart(DefaultCategoryDataset dataSet) {
         JFreeChart chart = ChartFactory.createBarChart
-                           ("Histograma JFreeChart","Dominios email","Nº email",
+                           ("Histograma JFreeChart",nameEjeX,"Nº",
                              dataSet,PlotOrientation.VERTICAL,false,
                              rootPaneCheckingEnabled,rootPaneCheckingEnabled);
         return chart;     
@@ -37,9 +39,9 @@ public class HistogramDisplay extends ApplicationFrame {
     
     private DefaultCategoryDataset createDataset() {
         DefaultCategoryDataset dataSet = new DefaultCategoryDataset();
-        for(String key: histo.keySet()) {
-            dataSet.addValue(histo.get(key),"",key);
-        }
+        for (T key: histo.keySet()) {	
+            dataSet.addValue(histo.get(key),"",(Comparable)key);	
+}
         return dataSet;
     }
     

@@ -6,11 +6,7 @@ import java.util.Set;
 
 public class Histogram<T> {
     
-    private final Map<T,Integer> map;
-    
-    public Histogram() {
-        map = new HashMap<>();
-    }
+    private final Map<T,Integer> map = new HashMap<>();
     
     public Integer get(T key) {
         return map.get(key);
