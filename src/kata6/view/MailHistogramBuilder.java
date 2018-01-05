@@ -1,8 +1,8 @@
-package kata4.view;
+package kata6.view;
 
 import java.util.List  ;
-import kata4.model.Histogram;
-import kata4.model.Mail;
+import kata6.model.Histogram;
+import kata6.model.Mail;
 
 public class MailHistogramBuilder {
     

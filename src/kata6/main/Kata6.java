@@ -1,14 +1,14 @@
-package kata4.main;
+package kata6.main;
 
 import java.io.IOException;
 import java.util.List;
-import kata4.model.Histogram;
-import kata4.model.Mail;
-import kata4.view.HistogramDisplay;
-import kata4.view.MailHistogramBuilder;
-import kata4.view.MailListReader;
+import kata6.model.Histogram;
+import kata6.model.Mail;
+import kata6.view.HistogramDisplay;
+import kata6.view.MailHistogramBuilder;
+import kata6.view.MailListReader;
 
-public class Kata4 {
+public class Kata6 {
 
     private String fileName;
     private Histogram<String> histogram;
@@ -16,12 +16,12 @@ public class Kata4 {
     private HistogramDisplay histoDisplay;
     
     public static void main(String[] args) throws IOException {
-        Kata4 kata4 = new Kata4();
-        kata4.execute();
+        Kata6 kata6 = new Kata6();
+        kata6.execute();
     }
     
     public void input() throws IOException {
-        fileName = "C:Documents\\NetBeansProjects\\Kata4\\emailsfile.txt";
+        fileName = "C:\\Users\\RafaelCS\\Documents\\NetBeansProjects\\Kata6\\emailsfile.txt";
         mailList = MailListReader.read(fileName);
     }
     

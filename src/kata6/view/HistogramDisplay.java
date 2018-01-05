@@ -1,4 +1,4 @@
-package kata4.view;
+package kata6.view;
 
 import java.awt.Dimension;
 import javax.swing.JPanel;
@@ -8,7 +8,7 @@ import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.ui.ApplicationFrame;
-import kata4.model.Histogram;
+import kata6.model.Histogram;
 
 public class HistogramDisplay extends ApplicationFrame {
     
